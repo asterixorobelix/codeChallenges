@@ -22,6 +22,10 @@ class AlgorithmWarmUp {
             return  ar.fold(0L,{currentValue, element -> currentValue+element}).toLong()
         }
 
+        fun diagonalDifference(arr: Array<Array<Int>>): Int {
+            return 1
+        }
+
     }
 
 }
