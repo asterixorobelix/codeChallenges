@@ -1,3 +1,4 @@
+import AlgorithmWarmUp.Companion.aVeryBigSum
 import AlgorithmWarmUp.Companion.compareTriplets
 import org.junit.Test
 import com.google.common.truth.Truth.assertThat
@@ -19,5 +20,10 @@ class AlgorithmWarmUpTests {
         val b2 = arrayOf(99,16,8)
 
         assertThat(compareTriplets(a2, b2)).isEqualTo(arrayOf(2,1))
+    }
+
+    @Test
+    fun veryBigSumTest(){
+        assertThat(aVeryBigSum(arrayOf(1000000001,1000000002,1000000003,1000000004,1000000005))).isEqualTo(5000000015)
     }
 }

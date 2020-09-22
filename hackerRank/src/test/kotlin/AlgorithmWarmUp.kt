@@ -18,6 +18,10 @@ class AlgorithmWarmUp {
             return if (element > 0) accumulatorValue + 1 else accumulatorValue + 0
         }
 
+        fun aVeryBigSum(ar: Array<Long>): Long {
+            return  ar.fold(0L,{currentValue, element -> currentValue+element}).toLong()
+        }
+
     }
 
 }
