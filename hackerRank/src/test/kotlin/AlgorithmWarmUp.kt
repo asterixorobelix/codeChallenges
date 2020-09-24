@@ -44,12 +44,14 @@ class AlgorithmWarmUp {
             return abs(primaryDiagonal - secondaryDiagonal)
         }
 
-        fun staircase(n: Int): Unit {
+        fun staircase(n: Int):String {
             var index = 1
+            val output = mutableListOf<String>()
             while (index <= n) {
-                println(" ".repeat(n-index) + "#".repeat(index))
+                output.add(" ".repeat(n-index) + "#".repeat(index))
                 index++
             }
+            return output.joinToString(separator = "")
         }
 
     }
