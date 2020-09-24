@@ -1,9 +1,11 @@
+import kotlin.math.abs
+
 class AlgorithmWarmUp {
 
     companion object {
         fun compareTriplets(a: Array<Int>, b: Array<Int>): Array<Int> {
-            var aScore = mutableListOf<Int>()
-            var bScore = mutableListOf<Int>()
+            val aScore = mutableListOf<Int>()
+            val bScore = mutableListOf<Int>()
             (a zip b).forEach {
                 aScore.add(it.first.compareTo(it.second))
                 bScore.add(it.second.compareTo(it.first))
@@ -19,11 +21,27 @@ class AlgorithmWarmUp {
         }
 
         fun aVeryBigSum(ar: Array<Long>): Long {
-            return  ar.fold(0L,{currentValue, element -> currentValue+element}).toLong()
+            return ar.fold(0L, { currentValue, element -> currentValue + element }).toLong()
         }
 
         fun diagonalDifference(arr: Array<Array<Int>>): Int {
-            return 1
+            val droppedArray = arr.drop(1)
+            var primaryDiagonal = 0
+            var secondaryDiagonal = 0
+            primaryDiagonal += droppedArray.indices.sumBy { index ->
+                println("Index: $index")
+                println("primaryDiagonal: $primaryDiagonal")
+                return@sumBy droppedArray[index][index]
+            }
+
+            secondaryDiagonal += droppedArray.indices.sumBy { index ->
+                val endIndex = (droppedArray[index].count() - 1) - index
+                println("End index: $endIndex")
+                println("secondaryDiagonal: $secondaryDiagonal")
+
+                return@sumBy droppedArray[index][endIndex]
+            }
+            return abs(primaryDiagonal - secondaryDiagonal)
         }
 
     }
