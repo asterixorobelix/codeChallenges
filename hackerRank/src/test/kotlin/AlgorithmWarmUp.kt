@@ -44,6 +44,14 @@ class AlgorithmWarmUp {
             return abs(primaryDiagonal - secondaryDiagonal)
         }
 
+        fun staircase(n: Int): Unit {
+            var index = 1
+            while (index <= n) {
+                println(" ".repeat(n-index) + "#".repeat(index))
+                index++
+            }
+        }
+
     }
 
 }

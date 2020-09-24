@@ -1,6 +1,7 @@
 import AlgorithmWarmUp.Companion.aVeryBigSum
 import AlgorithmWarmUp.Companion.compareTriplets
 import AlgorithmWarmUp.Companion.diagonalDifference
+import AlgorithmWarmUp.Companion.staircase
 import org.junit.Test
 import com.google.common.truth.Truth.assertThat
 
@@ -45,6 +46,18 @@ class AlgorithmWarmUpTests {
                 )
             )
         ).isEqualTo(15)
+    }
+
+    @Test
+    fun staircaseTest(){
+        assertThat(staircase(6)).
+        isEqualTo(
+            "     #"+
+        "    ##"+
+        "   ###"+
+        "  ####"+
+        " #####"+
+        "######")
     }
 
 }
