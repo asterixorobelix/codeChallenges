@@ -45,11 +45,9 @@ class AlgorithmWarmUp {
         }
 
         fun staircase(n: Int):String {
-            var index = 1
             val output = mutableListOf<String>()
-            while (index <= n) {
-                output.add(" ".repeat(n-index) + "#".repeat(index))
-                index++
+            (1..n).forEach {
+                output.add(" ".repeat(n-it) + "#".repeat(it))
             }
             return output.joinToString(separator = "")
         }
