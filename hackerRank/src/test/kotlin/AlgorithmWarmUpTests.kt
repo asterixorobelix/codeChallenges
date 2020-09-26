@@ -1,6 +1,7 @@
 import AlgorithmWarmUp.Companion.aVeryBigSum
 import AlgorithmWarmUp.Companion.compareTriplets
 import AlgorithmWarmUp.Companion.diagonalDifference
+import AlgorithmWarmUp.Companion.miniMaxSum
 import AlgorithmWarmUp.Companion.staircase
 import org.junit.Test
 import com.google.common.truth.Truth.assertThat
@@ -49,15 +50,20 @@ class AlgorithmWarmUpTests {
     }
 
     @Test
-    fun staircaseTest(){
-        assertThat(staircase(6)).
-        isEqualTo(
-            "     #"+
-        "    ##"+
-        "   ###"+
-        "  ####"+
-        " #####"+
-        "######")
+    fun staircaseTest() {
+        assertThat(staircase(6)).isEqualTo(
+            "     #" +
+                    "    ##" +
+                    "   ###" +
+                    "  ####" +
+                    " #####" +
+                    "######"
+        )
+    }
+
+    @Test
+    fun minMaxSumTest() {
+        assertThat(miniMaxSum(arrayOf(1, 2, 3, 4, 5))).isEqualTo(arrayOf(10, 14))
     }
 
 }

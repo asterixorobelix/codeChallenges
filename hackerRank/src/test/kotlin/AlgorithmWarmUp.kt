@@ -52,6 +52,12 @@ class AlgorithmWarmUp {
             return output.joinToString(separator = "")
         }
 
+        fun miniMaxSum(arr: Array<Int>): Array<Int> {
+           val total = arr.sum()
+
+            return arrayOf(total-arr.maxOrNull()!!,total-arr.minOrNull()!!)
+        }
+
     }
 
 }
