@@ -1,6 +1,7 @@
 import AlgorithmWarmUp.Companion.aVeryBigSum
 import AlgorithmWarmUp.Companion.compareTriplets
 import AlgorithmWarmUp.Companion.diagonalDifference
+import AlgorithmWarmUp.Companion.fizzBuzz
 import AlgorithmWarmUp.Companion.miniMaxSum
 import AlgorithmWarmUp.Companion.staircase
 import org.junit.Test
@@ -64,6 +65,29 @@ class AlgorithmWarmUpTests {
     @Test
     fun minMaxSumTest() {
         assertThat(miniMaxSum(arrayOf(1, 2, 3, 4, 5))).isEqualTo(arrayOf(10, 14))
+    }
+
+    @Test
+    fun fizzBuzzTest() {
+        assertThat(fizzBuzz(15)).isEqualTo(
+            listOf(
+                "1",
+                "2",
+                "Fizz",
+                "4",
+                "Buzz",
+                "Fizz",
+                "7",
+                "8",
+                "Fizz",
+                "Buzz",
+                "11",
+                "Fizz",
+                "13",
+                "14",
+                "FizzBuzz"
+            )
+        )
     }
 
 }

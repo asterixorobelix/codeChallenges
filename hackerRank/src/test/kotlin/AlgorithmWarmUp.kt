@@ -58,6 +58,21 @@ class AlgorithmWarmUp {
             return arrayOf(total-arr.maxOrNull()!!,total-arr.minOrNull()!!)
         }
 
+        fun fizzBuzz(n: Int): List<String> {
+            val result = mutableListOf<String>()
+            (1..n).forEach {
+                if (it.rem(5) == 0 && it.rem(3) == 0)
+                    result.add("FizzBuzz")
+                else if (it.rem(5) == 0)
+                    result.add("Buzz")
+                else if (it.rem(3) == 0)
+                    result.add("Fizz")
+                if (it.rem(5) != 0 && it.rem(3) != 0)
+                    result.add("$it")
+            }
+            return result
+        }
+
     }
 
 }
