@@ -18,13 +18,11 @@ class SumArraySinglesTests {
     }
 
     companion object {
-        fun repeats(arr: IntArray): Int = arr.fold(0) { accumulator, value ->
-            val listOfValue = arr.map {
-                it == value
-            }.filter {
-                it
-            }
-            if (listOfValue.count() == 1) accumulator + value else accumulator
-        }
+        fun repeats(arr: IntArray): Int = arr.groupBy {
+            it
+        }.filter {
+            it.value.size == 1
+        }.keys.sum()
     }
+
 }
