@@ -21,11 +21,8 @@ class PrinterErrorTests {
 
     fun printerError(s: String): String {
         val (errors, noErrors) = s.fold(Pair(0, 0)) { acc: Pair<Int, Int>, c: Char ->
-            val newError = if (c in 'a'..'m') acc.first + 0 else acc.first + 1
-            val noError = if (c in 'a'..'m') acc.second + 1 else acc.second + 1
-            Pair(newError, noError)
+            Pair(acc.first + if (c in 'a'..'m') 0 else 1, acc.second + if (c in 'a'..'m') 1 else 0)
         }
-
-        return "$errors/$noErrors"
+        return "$errors/${s.count()}"
     }
 }
