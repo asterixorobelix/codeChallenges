@@ -4,6 +4,7 @@ import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
 class ATMTests {
+    //todo NB
     /*
     There is enough money available on ATM in nominal value 10, 20, 50, 100, 200 and 500 dollars.
     You are given money in nominal value of n with 1<=n<=1500.
@@ -23,24 +24,14 @@ class ATMTests {
     }
 
     fun count(number: Int): Int {
-        val remainingNotes = listOf(
-            200, 100, 50, 20, 10
+        val notes = listOf(
+            500, 200, 100, 50, 20, 10
         )
-        val fiveHundredNotes = number / 500
-        var amountRemaining = number - (fiveHundredNotes * 500)
 
-        val isBase10 = number.toDouble().rem(10.0)==0.0
-
-        return if(isBase10){
-            remainingNotes.fold(fiveHundredNotes) { acc, value ->
-                val numberNotes = amountRemaining / value
-                if (numberNotes > 0) {
-                    amountRemaining -= numberNotes * value
-                    acc + numberNotes
-                } else
-                    acc
-            }
-        } else
-            -1
+        return  if (number % 10 == 0) notes.fold(
+            Pair(number,0)
+        ){ acc: Pair<Int, Int>, value: Int ->
+            Pair(acc.first % value,acc.second + acc.first/value )
+        }.second else -1
     }
 }
